@@ -111,7 +111,80 @@ export default {
                 <img v-if="movie.poster_path === null || movie.poster_path === undefined" class="movie_image p-3" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/00d53663-c0cd-46e9-9aba-bed9180648cd/d5c3vm5-20410fd2-bb67-4a27-870e-adb06437a71c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAwZDUzNjYzLWMwY2QtNDZlOS05YWJhLWJlZDkxODA2NDhjZFwvZDVjM3ZtNS0yMDQxMGZkMi1iYjY3LTRhMjctODcwZS1hZGIwNjQzN2E3MWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.BADD_GnMLXva7O9jwAHBzsKBhvpI_oAyjiccAPItofE" alt="Movie Image">
                 <img v-else class="movie_image p-3" :src="data.movieImage + movie.poster_path" alt="Movie Image">
             </div> -->
-            <div :style="{backgroundImage:`url(${data.movieImage + movie.poster_path})`}" class="movie_elements movie_card text-left">
+            <div v-if="movie.poster_path === null || movie.poster_path === undefined" :style="{backgroundImage:'url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/00d53663-c0cd-46e9-9aba-bed9180648cd/d5c3vm5-20410fd2-bb67-4a27-870e-adb06437a71c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAwZDUzNjYzLWMwY2QtNDZlOS05YWJhLWJlZDkxODA2NDhjZFwvZDVjM3ZtNS0yMDQxMGZkMi1iYjY3LTRhMjctODcwZS1hZGIwNjQzN2E3MWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.BADD_GnMLXva7O9jwAHBzsKBhvpI_oAyjiccAPItofE)'}"  class="movie_elements movie_card text-left">
+                <div class="text_elements py-5 d_flex column">
+                    <h3 class="movie_title">
+                        {{movie.title}}
+                        {{movie.name}}
+                    </h3>
+                    <p class="movie_media">
+                        {{movie.media_type}}
+                    </p>
+                    <h4 class="movie_original_title">
+                        {{movie.original_title}}
+                        {{movie.original_name}}
+                    </h4>
+                    <div class="language">
+                        <p class="no_flag" >Bandiera non presente.</p>
+                    </div>
+                    <div class="reviews">
+                        <div v-if="(Math.ceil(movie.vote_average)) === 0" class="vote d_flex align_items text-left">
+                        0 voti.
+                    </div>
+                    <div v-if="(Math.ceil(movie.vote_average)) === 1" class="vote d_flex align_items text-left">
+                        <i class="fa-solid fa-star star_review"></i>
+                    </div>
+                    <div v-if="(Math.ceil(movie.vote_average)) === 2" class="vote d_flex align_items text-left">
+                        <i class="fa-solid fa-star star_review"></i>
+                    </div>
+                    <div v-if="(Math.ceil(movie.vote_average)) === 3" class="vote d_flex align_items text-left">
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                    </div>
+                    <div v-if="(Math.ceil(movie.vote_average)) === 4" class="vote d_flex align_items text-left">
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                    </div>
+                    <div v-if="(Math.ceil(movie.vote_average)) === 5" class="vote d_flex align_items text-left">
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                    </div>
+                    <div v-if="(Math.ceil(movie.vote_average)) === 6" class="vote d_flex align_items text-left">
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                    </div>
+                    <div v-if="(Math.ceil(movie.vote_average)) === 7" class="vote d_flex align_items text-left">
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                    </div>
+                    <div v-if="(Math.ceil(movie.vote_average)) === 8" class="vote d_flex align_items text-left">
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                    </div>
+                    <div v-if="(Math.ceil(movie.vote_average)) === 9" class="vote d_flex align_items text-left">
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                    </div>
+                    <div v-if="(Math.ceil(movie.vote_average)) === 10" class="vote d_flex align_items text-left">
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                        <i class="fa-solid fa-star star_review"></i>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div v-else :style="{backgroundImage:`url(${data.movieImage + movie.poster_path})`}"  class="movie_elements movie_card text-left">
                 <div class="text_elements py-5 d_flex column">
                     <h3 class="movie_title">
                         {{movie.title}}
