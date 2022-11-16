@@ -4,6 +4,9 @@ import SingleMovie from "./SingleMovie.vue"
 
 export default {
     name: "MoviesList",
+    props: {
+        movie: Object
+    },
     components: {
         SingleMovie
     },
@@ -17,7 +20,7 @@ export default {
 
 <template>
     <div class="row d_flex align_items">
-        <SingleMovie v-for="movie in data.movies" ></SingleMovie>
+        <SingleMovie v-for="movie in data.movies" :movie="movie"></SingleMovie>
     </div>
 </template>
 
