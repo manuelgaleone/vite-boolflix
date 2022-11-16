@@ -16,7 +16,9 @@ export default {
 </script>
 
 <template>
-    <SingleMovie v-for="movie in movies" ></SingleMovie>
+    <div class="row d_flex align_items">
+        <SingleMovie v-for="movie in data.movies" ></SingleMovie>
+    </div>
 </template>
 
 <style>

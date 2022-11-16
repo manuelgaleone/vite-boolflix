@@ -1,6 +1,5 @@
 <script>
 import MoviesList from "../components/MoviesList.vue";
-import HeaderContent from "../components/HeaderContent.vue";
 import SearchBoxContent from "../components/SearchBoxContent.vue";
 import {data} from "../data.js"
 import axios from "axios";
@@ -8,7 +7,6 @@ import axios from "axios";
 export default {
     name: "MainContent",
     components: {
-        HeaderContent,
         SearchBoxContent,
         MoviesList
     },
@@ -18,9 +16,15 @@ export default {
         }
     },
     methods : {
-    callApi(url) {
+    callApiSearch() {
       
-        axios.get(url)
+        console.log("Click")
+        console.log(this.data.searchInput)
+
+        let searchMovie = this.data.searchInput
+        let urlApi = `${this.data.apiUrl}${searchMovie}`
+
+        axios.get(urlApi)
       .then(response => {
         console.log(response);
         this.data.movies = response.data.results
@@ -29,20 +33,13 @@ export default {
         console.error(err.message)
         this.data.error = err.message
       })
-    },
-    searchMovies() {
-        console.log("Click")
     }
-  },
-  mounted() {
-    this.callApi(this.data.apiUrl) 
   }
 }
 </script>
 
 <template>
-    <HeaderContent></HeaderContent>
-    <SearchBoxContent @searchMovie="callApi(this.data.apiUrl)"></SearchBoxContent>
+    <SearchBoxContent @searchMovie="callApiSearch"></SearchBoxContent>
     <MoviesList></MoviesList>
 </template>
 

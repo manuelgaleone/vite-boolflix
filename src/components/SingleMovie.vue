@@ -15,7 +15,7 @@ export default {
         <div class="movie movie_card p-2 text-center">
             <img class="movie_image py-2" src="../assets/img/flavicon.png" alt="Movie Image">
             <h3 class="p-2">
-                {{movie.original_name}}
+                ciao
             </h3>
         </div>
     </div>
