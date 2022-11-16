@@ -12,7 +12,7 @@ export default {
     },
     data() {
         return {
-            data
+            data,
         }
     },
     methods : {
@@ -33,8 +33,8 @@ export default {
         console.error(err.message)
         this.data.error = err.message
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

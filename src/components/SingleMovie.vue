@@ -1,4 +1,6 @@
 <script>
+import {data} from "../data.js"
+
 export default {
     name: "SingleMovie",
     components: {
@@ -6,7 +8,26 @@ export default {
     },
     props: {
         movie: Object
-    }
+    },
+    data() {
+        return {
+            data,
+            flags: [
+            '../assets/img/ita.svg',
+            '../assets/img/usa.svg',
+            '../assets/img/vatican.svg'
+            ],
+            selectedFlag: ''
+        }
+    },
+    methods: {
+        randomItem(items) {
+        return items[Math.floor(Math.random()*items.length)];
+        }
+    },
+    created() {
+    this.selectedFlag = this.randomItem(this.flags)
+  }
 }
 </script>
 
@@ -20,10 +41,10 @@ export default {
             <h4 class="movie_original_title">
                 {{movie.original_title}}
             </h4>
-            <p class="language">
-                {{movie.original_language}}
-            </p>
-            <p class="vote">
+            <div class="language">
+                <p v-if="selectedFlag"><img class="flag_icon" :src=selectedFlag alt=""></p>
+            </div>
+            <p class="vote py-3">
                 {{movie.vote_average}}
             </p>
         </div>
@@ -31,4 +52,5 @@ export default {
 </template>
 
 <style>
+
 </style>

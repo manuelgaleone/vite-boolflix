@@ -14,6 +14,8 @@ export default {
         return {
             data
         }
+    },
+    methods: {
     }
 }
 </script>
