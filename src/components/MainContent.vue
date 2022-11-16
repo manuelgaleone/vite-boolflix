@@ -22,7 +22,7 @@ export default {
         console.log(this.data.searchInput)
 
         let searchMovie = this.data.searchInput
-        let urlApi = `${this.data.apiUrl}${searchMovie}`
+        let urlApi = `${this.data.apiMultiUrl}${searchMovie}`
 
         axios.get(urlApi)
       .then(response => {
