@@ -38,13 +38,13 @@ export default {
 
 <template>
   <div class="container header_content">
-    <div class="row align_items justify_around p-3">
+    <div class="row align_items justify_around p-2">
       <div class="col-4">
         <h1 class=" header_title ">
           Netflix, ma anche meglio.
         </h1>
       </div>
-      <div class="col-8">
+      <div class="col-8 d_flex">
         <SearchBoxContent @searchMovie="callApiSearch" @keyEnterSearch="callApiSearch"></SearchBoxContent>
       </div>
     </div>
