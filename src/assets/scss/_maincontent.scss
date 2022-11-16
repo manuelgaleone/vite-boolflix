@@ -30,26 +30,51 @@
 
 .movie_title {
     font-size: 20px;
+    padding-left: 15px;
+    padding-top: 15px;
 }
 
 .movie_original_title {
     font-size: 15px;
-    padding-bottom: 10px;
+    padding-left: 15px;
 }
 
 .flag_icon {
     width: 35px;
+    padding-top: 5px;
+    padding-left: 15px;
 }
 
 .no_flag {
     font-size: 15px;
+    padding-top: 5px;
+    padding-left: 15px;
 }
 
 .movie_media {
     font-size: 15px;
+    padding-top: 0px;
+    padding-left: 15px;
+}
+
+.reviews {
+    padding-left: 15px;
 }
 
 .star_review {
     color: white;
 }
 
+.text_elements {
+    justify-items: center;
+}
+
+.movie_card {
+    background-size: cover;
+    height: 500px;
+
+}
+
+.column {
+    flex-direction: column;
+}
