@@ -1,10 +1,14 @@
 <script>
 import MoviesList from "../components/MoviesList.vue";
+import HeaderContent from "../components/HeaderContent.vue";
+import SearchBoxContent from "../components/SearchBoxContent.vue";
 import axios from "axios";
 
 export default {
     name: "MainContent",
     components: {
+        HeaderContent,
+        SearchBoxContent,
         MoviesList
     },
     data() {
@@ -30,9 +34,8 @@ export default {
 </script>
 
 <template>
-    <div class="container d_flex justify_center searchbox_container py-5">
-        <input type="text" placeholder="Cosa vuoi guardare?" class="search_box" name="SearchBox" id="searchBox">
-    </div>
+    <HeaderContent></HeaderContent>
+    <SearchBoxContent></SearchBoxContent>
     <MoviesList></MoviesList>
 </template>
 

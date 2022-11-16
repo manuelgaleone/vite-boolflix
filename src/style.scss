@@ -7,6 +7,10 @@ body {
   background-color: black;
 }
 
+.color_white {
+  color: white;
+}
+
 .d_flex {
   display: flex;
 }
@@ -17,4 +21,8 @@ body {
 
 .justify_center {
   justify-content: center;
+}
+
+.text_center {
+  text-align: center;
 }
