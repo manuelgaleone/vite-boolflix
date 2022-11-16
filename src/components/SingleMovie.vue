@@ -50,25 +50,50 @@ export default {
                 <div v-if="(Math.ceil(movie.vote_average)) === 0" class="vote py-3 d_flex align_items justify_center">
                     0 voti.
                 </div>
-                <div v-if="(Math.ceil(movie.vote_average)) > 1 < 2" class="vote py-3 d_flex align_items justify_center p-1">
+                <div v-if="(Math.ceil(movie.vote_average)) === 1" class="vote py-3 d_flex align_items justify_center">
                     <i class="fa-solid fa-star star_review"></i>
                 </div>
-                <div v-if="(Math.ceil(movie.vote_average)) > 2 < 4" class="vote py-3 d_flex align_items justify_center p-1">
-                    <i class="fa-solid fa-star star_review"></i>
+                <div v-if="(Math.ceil(movie.vote_average)) === 2" class="vote py-3 d_flex align_items justify_center">
                     <i class="fa-solid fa-star star_review"></i>
                 </div>
-                <div v-if="(Math.ceil(movie.vote_average)) > 4 < 6" class="vote py-3 d_flex align_items justify_center p-1">
-                    <i class="fa-solid fa-star star_review"></i>
+                <div v-if="(Math.ceil(movie.vote_average)) === 3" class="vote py-3 d_flex align_items justify_center">
                     <i class="fa-solid fa-star star_review"></i>
                     <i class="fa-solid fa-star star_review"></i>
                 </div>
-                <div v-if="(Math.ceil(movie.vote_average)) > 6 < 8" class="vote py-3 d_flex align_items justify_center p-1">
+                <div v-if="(Math.ceil(movie.vote_average)) === 4" class="vote py-3 d_flex align_items justify_center">
+                    <i class="fa-solid fa-star star_review"></i>
+                    <i class="fa-solid fa-star star_review"></i>
+                </div>
+                <div v-if="(Math.ceil(movie.vote_average)) === 5" class="vote py-3 d_flex align_items justify_center">
+                    <i class="fa-solid fa-star star_review"></i>
+                    <i class="fa-solid fa-star star_review"></i>
+                    <i class="fa-solid fa-star star_review"></i>
+                </div>
+                <div v-if="(Math.ceil(movie.vote_average)) === 6" class="vote py-3 d_flex align_items justify_center">
+                    <i class="fa-solid fa-star star_review"></i>
+                    <i class="fa-solid fa-star star_review"></i>
+                    <i class="fa-solid fa-star star_review"></i>
+                </div>
+                <div v-if="(Math.ceil(movie.vote_average)) === 7" class="vote py-3 d_flex align_items justify_center">
                     <i class="fa-solid fa-star star_review"></i>
                     <i class="fa-solid fa-star star_review"></i>
                     <i class="fa-solid fa-star star_review"></i>
                     <i class="fa-solid fa-star star_review"></i>
                 </div>
-                <div v-if="(Math.ceil(movie.vote_average)) > 8 < 10" class="vote py-3 d_flex align_items justify_center p-1">
+                <div v-if="(Math.ceil(movie.vote_average)) === 8" class="vote py-3 d_flex align_items justify_center">
+                    <i class="fa-solid fa-star star_review"></i>
+                    <i class="fa-solid fa-star star_review"></i>
+                    <i class="fa-solid fa-star star_review"></i>
+                    <i class="fa-solid fa-star star_review"></i>
+                </div>
+                <div v-if="(Math.ceil(movie.vote_average)) === 9" class="vote py-3 d_flex align_items justify_center">
+                    <i class="fa-solid fa-star star_review"></i>
+                    <i class="fa-solid fa-star star_review"></i>
+                    <i class="fa-solid fa-star star_review"></i>
+                    <i class="fa-solid fa-star star_review"></i>
+                    <i class="fa-solid fa-star star_review"></i>
+                </div>
+                <div v-if="(Math.ceil(movie.vote_average)) === 10" class="vote py-3 d_flex align_items justify_center">
                     <i class="fa-solid fa-star star_review"></i>
                     <i class="fa-solid fa-star star_review"></i>
                     <i class="fa-solid fa-star star_review"></i>
