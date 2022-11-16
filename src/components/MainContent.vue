@@ -1,4 +1,5 @@
 <script>
+import HeaderContent from "../components/HeaderContent.vue"
 import MoviesList from "../components/MoviesList.vue";
 import SearchBoxContent from "../components/SearchBoxContent.vue";
 import {data} from "../data.js"
@@ -7,6 +8,7 @@ import axios from "axios";
 export default {
     name: "MainContent",
     components: {
+        HeaderContent,
         SearchBoxContent,
         MoviesList
     },
@@ -39,6 +41,7 @@ export default {
 </script>
 
 <template>
+    <HeaderContent @searchFunction="callApiSearch"></HeaderContent>
     <SearchBoxContent @searchMovie="callApiSearch" @keyEnterSearch="callApiSearch"></SearchBoxContent>
     <MoviesList></MoviesList>
 </template>

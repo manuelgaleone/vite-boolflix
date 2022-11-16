@@ -12,7 +12,6 @@ export default {
 </script>
 
 <template>
-  <HeaderContent></HeaderContent>
   <MainContent></MainContent>
 </template>
 

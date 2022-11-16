@@ -47,7 +47,8 @@ export default {
                 <div class="language">
                     <p class="no_flag" >Bandiera non presente.</p>
                 </div>
-                <div v-if="(Math.ceil(movie.vote_average)) === 0" class="vote py-3 d_flex align_items justify_center">
+                <div class="reviews">
+                    <div v-if="(Math.ceil(movie.vote_average)) === 0" class="vote py-3 d_flex align_items justify_center">
                     0 voti.
                 </div>
                 <div v-if="(Math.ceil(movie.vote_average)) === 1" class="vote py-3 d_flex align_items justify_center">
@@ -99,6 +100,7 @@ export default {
                     <i class="fa-solid fa-star star_review"></i>
                     <i class="fa-solid fa-star star_review"></i>
                     <i class="fa-solid fa-star star_review"></i>
+                </div>
                 </div>
             </div>
         </div>
