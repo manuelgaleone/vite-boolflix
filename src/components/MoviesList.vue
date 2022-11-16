@@ -22,7 +22,7 @@ export default {
 
 <template>
     <div class="container">
-        <div class="row d_flex align_items">
+        <div class="row">
             <SingleMovie v-for="movie in data.movies" :movie="movie"></SingleMovie>
         </div>
     </div>

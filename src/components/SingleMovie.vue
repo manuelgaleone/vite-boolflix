@@ -28,7 +28,7 @@ export default {
 <template>
     <div class="col-3 px-2 py-2 ">
         <div class="movie movie_card p-2 text-center">
-            <!-- <img class="movie_image py-2" src="../assets/img/flavicon.png" alt="Movie Image"> -->
+            <img class="movie_image p-3" :src="data.movieImage + movie.poster_path" alt="Movie Image">
             <h3 class="movie_title p-2">
                 {{movie.title}}
                 {{movie.name}}
