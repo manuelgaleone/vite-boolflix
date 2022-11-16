@@ -39,7 +39,7 @@ export default {
 </script>
 
 <template>
-    <SearchBoxContent @searchMovie="callApiSearch"></SearchBoxContent>
+    <SearchBoxContent @searchMovie="callApiSearch" @keyEnterSearch="callApiSearch"></SearchBoxContent>
     <MoviesList></MoviesList>
 </template>
 
