@@ -1,7 +1,20 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./assets/scss/_maincontent.scss";
+@import "./assets/scss/_movieslist.scss";
 
 body {
   font-family: helvetica;
   background-color: black;
+}
+
+.d_flex {
+  display: flex;
+}
+
+.align_items {
+  align-items: center;
+}
+
+.justify_center {
+  justify-content: center;
 }
