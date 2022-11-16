@@ -29,7 +29,7 @@ export default {
     <div class="col-3 px-2 py-2 ">
         <div class="movie movie_card p-2 text_center">
             <div class="movie_imgs">
-                <img v-if="movie.poster_path === null" class="movie_image p-3" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/00d53663-c0cd-46e9-9aba-bed9180648cd/d5c3vm5-20410fd2-bb67-4a27-870e-adb06437a71c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAwZDUzNjYzLWMwY2QtNDZlOS05YWJhLWJlZDkxODA2NDhjZFwvZDVjM3ZtNS0yMDQxMGZkMi1iYjY3LTRhMjctODcwZS1hZGIwNjQzN2E3MWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.BADD_GnMLXva7O9jwAHBzsKBhvpI_oAyjiccAPItofE" alt="Movie Image">
+                <img v-if="movie.poster_path === null || movie.poster_path === undefined" class="movie_image p-3" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/00d53663-c0cd-46e9-9aba-bed9180648cd/d5c3vm5-20410fd2-bb67-4a27-870e-adb06437a71c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAwZDUzNjYzLWMwY2QtNDZlOS05YWJhLWJlZDkxODA2NDhjZFwvZDVjM3ZtNS0yMDQxMGZkMi1iYjY3LTRhMjctODcwZS1hZGIwNjQzN2E3MWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.BADD_GnMLXva7O9jwAHBzsKBhvpI_oAyjiccAPItofE" alt="Movie Image">
                 <img v-else class="movie_image p-3" :src="data.movieImage + movie.poster_path" alt="Movie Image">
             </div>
             <div class="movie_elements text_center">
