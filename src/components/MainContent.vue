@@ -2,7 +2,7 @@
 import MoviesList from "../components/MoviesList.vue";
 import HeaderContent from "../components/HeaderContent.vue";
 import SearchBoxContent from "../components/SearchBoxContent.vue";
-import data from "../data.js"
+import {data} from "../data.js"
 import axios from "axios";
 
 export default {
@@ -29,14 +29,20 @@ export default {
         console.error(err.message)
         this.data.error = err.message
       })
+    },
+    searchMovies() {
+        console.log("Click")
     }
+  },
+  mounted() {
+    this.callApi(this.data.apiUrl) 
   }
 }
 </script>
 
 <template>
     <HeaderContent></HeaderContent>
-    <SearchBoxContent></SearchBoxContent>
+    <SearchBoxContent @searchMovie="callApi(this.data.apiUrl)"></SearchBoxContent>
     <MoviesList></MoviesList>
 </template>
 
