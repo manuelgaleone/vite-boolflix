@@ -2,6 +2,7 @@
 import MoviesList from "../components/MoviesList.vue";
 import HeaderContent from "../components/HeaderContent.vue";
 import SearchBoxContent from "../components/SearchBoxContent.vue";
+import data from "../data.js"
 import axios from "axios";
 
 export default {
@@ -13,7 +14,7 @@ export default {
     },
     data() {
         return {
-
+            data
         }
     },
     methods : {
@@ -22,7 +23,7 @@ export default {
         axios.get(url)
       .then(response => {
         console.log(response);
-        this.data.characters = response.data
+        this.data.movies = response.data.results
       })
       .catch(err => {
         console.error(err.message)
