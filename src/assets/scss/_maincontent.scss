@@ -31,7 +31,6 @@
 .movie_title {
     font-size: 20px;
     padding-left: 15px;
-    padding-top: 15px;
 }
 
 .movie_original_title {
@@ -86,4 +85,10 @@
 
 .column {
     flex-direction: column;
+}
+
+.overview {
+    padding-left: 15px;
+    padding-top: 5px;
+    font-size: 15px;
 }
