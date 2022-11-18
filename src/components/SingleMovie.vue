@@ -20,7 +20,9 @@ export default {
         }
     },
     methods: {
-        
+        reviewMath(num) {
+            return Math.ceil(num)
+        }
     }
 }
 </script>
@@ -105,153 +107,30 @@ export default {
             </div>
         </div>
     </div> -->
-    <div class="col-3 px-2 py-2 ">
-        <div class="movie">
-            <div v-if="movie.poster_path === null || movie.poster_path === undefined" :style="{backgroundImage:'url(https://bit.ly/3V4vcOs)'}" class="movie_elements movie_card text-left">
-                <div class="text_elements py-3 d_flex column">
-                    <h3 class="movie_title">
-                        <strong>Title:</strong>{{movie.title}}
-                        <strong>Title:</strong>{{movie.name}}
-                    </h3>
-                    <h4 class="movie_original_title">
-                        <strong>Original title:</strong>{{movie.original_title}}
-                        <strong>Original title:</strong>{{movie.original_name}}
-                    </h4>
-                    <div class="reviews">
-                        <div v-if="(Math.ceil(movie.vote_average)) === 0" class="vote d_flex align_items text-left">
-                        0 voti.
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 1" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 2" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 3" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 4" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 5" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 6" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 7" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 8" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 9" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 10" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    </div>
-                    <p class="overview">
-                        <strong>Overview:</strong>{{movie.overview}}
-                    </p>
-                    <div class="language">
-                        <p class="no_flag" >Bandiera non presente.</p>
-                    </div>
-                </div>
+    <div class="col-3 m-3">
+        <div class="movie_elements movie_card text-left">
+            <div class="poster_img">
+                <img v-if="movie.poster_path === null || movie.poster_path === undefined" class="movie_image" src="https://bit.ly/3AqnN4g" alt="">
+                <img v-else class="movie_image" :src="data.movieImage + movie.poster_path" alt="">
             </div>
-            <div v-else :style="{backgroundImage:`url(${data.movieImage + movie.poster_path})`}"  class="movie_elements movie_card text-left">
-                <div class="text_elements py-3 d_flex column">
-                    <h3 class="movie_title">
-                        <strong>Title:</strong>{{movie.title}}
-                        <strong>Title:</strong>{{movie.name}}
-                    </h3>
-                    <h4 class="movie_original_title">
-                        <strong>Original title:</strong>{{movie.original_title}}
-                        <strong>Original title:</strong>{{movie.original_name}}
-                    </h4>
-                    <div class="reviews">
-                        <div v-if="(Math.ceil(movie.vote_average)) === 0" class="vote d_flex align_items text-left">
-                        0 voti.
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 1" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 2" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 3" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 4" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 5" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 6" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 7" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 8" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 9" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    <div v-if="(Math.ceil(movie.vote_average)) === 10" class="vote d_flex align_items text-left">
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                        <i class="fa-solid fa-star star_review"></i>
-                    </div>
-                    </div>
-                    <p class="overview">
-                        <strong>Overview:</strong>{{movie.overview}}
-                    </p>
-                    
-                    <div class="language">
-                        <p class="no_flag" >Bandiera non presente.</p>
-                    </div>
+            <div class="text_elements px-3 py-4 d_flex column">
+                <h3 class="movie_title">
+                    <strong>Title:</strong>{{movie.title}}
+                    <strong>Title:</strong>{{movie.name}}
+                </h3>
+                <h4 class="movie_original_title">
+                    <strong>Original title:</strong>{{movie.original_title}}
+                    {{movie.original_name}}
+                </h4>
+                <div class="reviews">
+                    <i class="fa-solid fa-star star_review"></i>
+                </div>
+                <p class="overview">
+                    <strong>Overview:</strong>{{movie.overview}}
+                </p>
+                
+                <div class="language">
+                    <p class="no_flag" >Bandiera non presente.</p>
                 </div>
             </div>
         </div>
@@ -265,13 +144,14 @@ export default {
 }
 
 .movie_card:hover {
-
-    background-color: black;
-    background-image: none;
-    transition: 0.5s;
-
+    
     .text_elements {
         display: inline-block;
+    }
+    
+    .movie_image {
+        opacity: 0;
+        transition: 0.3s;
     }
 
 }

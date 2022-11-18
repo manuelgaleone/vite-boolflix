@@ -38,11 +38,9 @@ export default {
 
 <template>
   <div class="container header_content">
-    <div class="row align_items justify_around p-2">
+    <div class="row align_items justify_around">
       <div class="col-4">
-        <h1 class=" header_title ">
-          Netflix, ma anche meglio.
-        </h1>
+        <img class="header_logo" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix Logo">
       </div>
       <div class="col-8 d_flex">
         <SearchBoxContent @searchMovie="callApiSearch" @keyEnterSearch="callApiSearch"></SearchBoxContent>
@@ -51,5 +49,10 @@ export default {
   </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
+
+.header_logo {
+  width:150px;
+}
+
 </style>

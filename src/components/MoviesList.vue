@@ -22,7 +22,7 @@ export default {
 
 <template>
     <div class="container">
-        <div class="row">
+        <div class="row_movies justify_space">
             <SingleMovie v-for="movie in data.movies" :movie="movie"></SingleMovie>
         </div>
     </div>
