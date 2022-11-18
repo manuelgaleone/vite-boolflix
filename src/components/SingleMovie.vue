@@ -129,8 +129,10 @@ export default {
                     <strong>Original title:</strong>{{movie.original_title}}
                     {{movie.original_name}}
                 </h4>
-                <div class="reviews">
-                    <i class="fa-solid fa-star star_review"></i>
+                <div class="reviews d_flex align_items">
+                    <div v-for="star in reviewMath(movie.vote_average /2)" class="stars">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
                 </div>
                 <p class="overview">
                     <strong>Overview:</strong>{{movie.overview}}
