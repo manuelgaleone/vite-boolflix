@@ -66,6 +66,14 @@ export default {
       </div>
       <div class="col-6 d_flex align_items">
         <SearchBoxContent @searchMovie="callApiSearch" @keyEnterSearch="callApiSearch"></SearchBoxContent>
+        <span class="color_white">Bambini</span>
+        <div class="notify px-4">
+          <i class="fa-solid fa-bell color_white"></i>
+          <div class="red_circle"></div>
+        </div>
+        <div class="avatar">
+            <img class="netflix_avatar" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Netflix Avatar">
+          </div>
       </div>
     </div>
   </div>
@@ -88,6 +96,24 @@ export default {
 }
 .menu_list {
   list-style: none;
+}
+
+.notify {
+  position: relative;
+}
+
+.red_circle {
+  background-color: red;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 5;
+}
+
+.netflix_avatar {
+  width: 35px;
 }
 
 </style>
