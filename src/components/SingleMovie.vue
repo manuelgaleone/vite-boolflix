@@ -122,11 +122,11 @@ export default {
             </div>
             <div class="text_elements px-3 py-4 d_flex column">
                 <h3 class="movie_title">
-                    <strong>Title:</strong>{{movie.title}}
-                    <strong>Title:</strong>{{movie.name}}
+                    {{movie.title}}
+                    {{movie.name}}
                 </h3>
                 <h4 class="movie_original_title">
-                    <strong>Original title:</strong>{{movie.original_title}}
+                    {{movie.original_title}}
                     {{movie.original_name}}
                 </h4>
                 <div class="reviews d_flex align_items">
