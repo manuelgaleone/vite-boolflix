@@ -28,5 +28,11 @@ export default {
     </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
+.originali_title {
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+
+}
 </style>

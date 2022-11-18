@@ -130,16 +130,25 @@ export default {
                     {{movie.original_name}}
                 </h4>
                 <div class="reviews d_flex align_items">
-                    <div v-for="star in reviewMath(movie.vote_average /2)" class="stars">
+                    <div v-if="movie.vote_average > 0" v-for="star in reviewMath(movie.vote_average /2)" class="stars">
                         <i class="fa-solid fa-star"></i>
                     </div>
+                    <div v-else v-for="star in reviewMath(movie.vote_average /2)" class="stars">
+                        <p class="review">
+                            Voto non presente.
+                        </p>
+                    </div>
+
                 </div>
-                <p class="overview">
+                <p v-if="movie.overview.length > 0" class="overview">
                     <strong>Overview:</strong>{{movie.overview}}
+                </p>
+                <p v-else class="overview">
+                    <strong>Overview:</strong>Non presente.
                 </p>
                 <div class="language">
                     <img class="flag_icon" v-if="flagSelect(movie.original_language)" :src="putFlag(movie.original_language)" alt="Flag">
-                    <p v-else  alt="">Bandiera non presente.</p>
+                    <p v-else class="no_flag" alt="">Bandiera non presente.</p>
                 </div>
             </div>
         </div>

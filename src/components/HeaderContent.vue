@@ -39,10 +39,32 @@ export default {
 <template>
   <div class="container header_content">
     <div class="row align_items justify_around">
-      <div class="col-4">
+      <div class="col-6 d_flex align_items">
         <img class="header_logo" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix Logo">
+        <div class="navigation d_flex align_items">
+          <ul class="menu_list d_flex align_items">
+            <li class="menu_element">
+              <a class="menu_item px-2" href="#">Home</a>
+            </li>
+            <li class="menu_element">
+              <a class="menu_item px-2" href="#">Serie Tv</a>
+            </li>
+            <li class="menu_element">
+              <a class="menu_item px-2" href="#">Film</a>
+            </li>
+            <li class="menu_element">
+              <a class="menu_item px-2" href="#">Original</a>
+            </li>
+            <li class="menu_element">
+              <a class="menu_item px-2" href="#">Aggiunti di recente</a>
+            </li>
+            <li class="menu_element">
+              <a class="menu_item px-2" href="#">La mia Lista</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col-8 d_flex">
+      <div class="col-6 d_flex align_items">
         <SearchBoxContent @searchMovie="callApiSearch" @keyEnterSearch="callApiSearch"></SearchBoxContent>
       </div>
     </div>
@@ -52,7 +74,20 @@ export default {
 <style lang="scss" scoped>
 
 .header_logo {
-  width:150px;
+  width:75px;
+}
+
+.deactive {
+  color: white;
+}
+
+.menu_item {
+  color: white;
+  text-decoration: none;
+
+}
+.menu_list {
+  list-style: none;
 }
 
 </style>
