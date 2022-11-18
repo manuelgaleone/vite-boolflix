@@ -12,16 +12,23 @@ export default {
     data() {
         return {
             data,
-            flags: [
-            '../assets/img/ita.svg',
-            '../assets/img/usa.svg',
-            '../assets/img/vatican.svg'
-            ],
+            flags: ['it',
+                    'en']
         }
     },
     methods: {
         reviewMath(num) {
             return Math.ceil(num)
+        },
+        flagSelect(language) {
+            if (this.flags.includes(language)) {
+                return true
+            } else {
+                return false
+            }
+        },
+        putFlag(languageCode) {
+            return new URL(`../assets/img/${languageCode}.svg`, import.meta.url).href
         }
     }
 }
@@ -128,9 +135,9 @@ export default {
                 <p class="overview">
                     <strong>Overview:</strong>{{movie.overview}}
                 </p>
-                
                 <div class="language">
-                    <p class="no_flag" >Bandiera non presente.</p>
+                    <img class="flag_icon" v-if="flagSelect(movie.original_language)" :src="putFlag(movie.original_language)" alt="Flag">
+                    <p v-else  alt="">Bandiera non presente.</p>
                 </div>
             </div>
         </div>
